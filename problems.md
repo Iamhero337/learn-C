@@ -871,7 +871,7 @@ Example Output:
 Write a program to read until EOF and print only the lines which has length greater than 100.
 Use the `get_line` function that we have already implemented in class.
 
-Sample input file is given `Q-041-input.txt`, use this file as input so you don't need to type
+Sample input file is given `inputs/Q-041-input.txt`, use this file as input so you don't need to type
 100 or more characters line to test your program's correctness.
 
 ## Q-044. 26-09-2021
@@ -950,6 +950,10 @@ Example Output:
 Write a function `int power(int b, int p)` which will calculate the `b^p` using recursion technique.
 You also need to write `main()` function.
 
+constraint:
+0 < b < 100
+0 < p < 10
+
 
 ## Q-050. 11-10-2021
 Write a function `void array_reverse_print(int *arr, int size)` which will print the given array `arr` of size `size`
@@ -1021,7 +1025,7 @@ int main()
 	printf("s is %s\n", s);
 
 	s[0] = foo;
-	printf("s[0] is %s\n", s[0]);
+	printf("s[0] is %c\n", s[0]);
 
 	return 0;
 }
@@ -1142,7 +1146,6 @@ void print_array(double *arr, int size)
 	}
 }
 
-
 ```
 
 
@@ -1226,11 +1229,6 @@ int main()
 	return 0;
 }
 
-void sum_by_reference(int *a, int *b, int *sum)
-{
-	//
-}
-
 ```
 
 
@@ -1269,11 +1267,11 @@ Wite a program that will implement the following instruction:
 
 
 ## Q-063. 26-10-2021
-You are asked to write a program that will work as calculator and will print the final result in decimal value upto 2 decimal places.
+You are asked to write a program that will work as calculator and will print the final result in decimal value upto 2 decimal places for the `n` given operations.
 First line of input is v and then next line will be n then n line follows
 every line will have operator o and operand p.
 where
-- o is one of the following operator in one letter +, -, * and /.
+- o is one of the following operator in one letter `+, -, * and /`.
 - p is operand which is a double precision value e.g. 5.0
 - v is an initial value in decimal
 - n is integer denoting number of operation you need to perform
@@ -1346,23 +1344,777 @@ both arrays are sorted
 the new merged array will become 1, 2, 3, 4, 5, 6
 
 
-## Q-066. 28-10-2021
-You are given a partially solved problem of managing student records as a menu driven program
-in the file `cclass-common/prob066.c`.
-Currently the structure of student data type and add student functionality is implemented.
+## Q-066. 10-11-2021
+Write a program that will read lines from user until end of file and write the same
+line in a file "para.txt".
+Use the `get_line()` function that we wrote in the past to read user input.
 
-You need to implement the list functionality and delete functionality.
-List funtionality should be implemented in given function `student_list()` which should
-print all the students present in the `students` array.
-Delete funtionality should be implemented in given function `student_delete()` which should
-delete the student (i.e. removing the student from students record by shifting over students
-present in the right side of the delete element) by student ID.
-You should ask from user the ID of student that the user wants to delete.
+
+## Q-067. 12-11-2021
+Write a program that will open file `/usr/share/dict/words` and read every line of
+this file and print every line.
+NOTE: This program is for linux OS.
+
+
+## Q-068. 13-11-2021
+Let's make our own basic file copy program.
+Write a program that will take two file paths as command line argument, let's call
+these file `source` and `destination` respectively.
+Open the `source` file in read mode and open the `destination` file in write and
+read one line at a time from `source` file and wrie that same line in `destination`
+file. You can use `get_line()` function or can also read file character by character
+using `getc()` function.
+
+
+## Q-069. 16-11-2021
+Write a program that will take filename as command line argument and opens that file
+in append mode, first prints every line from the file (if any) then reads a line
+from user at a time and appends that newly read line in the same file.
+When users enters EOF then you should stop reading the line and close the file.
+
+Explanation: Let's say program is ran with `file.txt` as argument to program
+and this file already has 3 lines in it. You should print this three line first
+on terminal then read new line from user and append those new lines to the same
+file until end of file. Let's say user typed 4 new lines then final content of
+the file should be 7 lines (3 from previous and 4 new lines from user).
+
+
+## Q-070. 17-11-2021
+Write a program that will take filename as command line argument and print
+the content of the file twice.
+
+Explanation:
+Let's say the file has 2 lines
+```
+Line 1
+Line 2
+```
+Your program should print
+```
+Line 1
+Line 2
+Line 1
+Line 2
+```
+
+
+## Q-071. 18-11-2021
+Write a program to initialize five any integers in an array `arr` of size 5.
+Create a file `numbers.bin` and write entire array `arr` in it, close the
+file and exit the program.
+
+
+## Q-072. 18-11-2021
+Write a program to open the file `numbers.bin` from previous problem `Q-071`
+and read the entire file in an integer array `arr` of size 5 and print that
+array on `stdout` (terminal).
+Verify that the output of this program matches the integers that are wrote
+in file `numbers.bin` in problem `Q-071`.
+
+
+## Q-073. 20-11-2021
+You are given a struct `struct student` as declared below. You need to 
+write a program to read input from `stdin` (keyboard) and fill the member
+of the struct and then write that struct to file `student.db`.
+```c
+struct student {
+	int roll;
+	char name[100];
+	char phone[16];
+};
+```
+
+
+## Q-074. 20-11-2021
+You are given the same struct `struct student` as in problem `Q-073`. You need to 
+write a program to read input from file `student.db` (from prev question) in struct
+`struct student` and print the value of student on `stdout` (terminal).
+
+
+## Q-075. 24-11-2021
+You are given the same struct `struct student` as in problem `Q-073`. You need to 
+write a program that will create `struct student` array of size 3 to read input
+from `stdin` (keyboard) of 3 students and fill that array and then write that array
+to file `student.db`.
+After writing, this `student.db` file must contain those three students that you wrote.
+
+
+## Q-076. 25-11-2021
+You are given the same struct `struct student` as in problem `Q-075`. You need to 
+write a program to read input from file `student.db` (from prev question) in
+`struct student` array (you need to declare struct student array of size 3) and print
+the value of all students on `stdout` (terminal).
+
+
+## Q-077. 30-11-2021
+You are given a partially solved problem of managing student records as a menu driven program
+in the file `cclass-common/partials/prob077.c`.
+Currently the structure of student data type, handling of user input and output has been done.
+
+- Add function should be implemented in given function `student_add()`.
+- List funtionality should be implemented in given function `student_list()` which should
+  print all the students present in the `students` array.
 
 The format of the output should be like:
 ID    ROLL    SCORE    NAME
 1     2       300      Student name
 ...
 
+
+## Q-078. 02-12-2021
+Continuing `Q-077`...
+You are given a partially solved problem of managing student records as a menu driven program
+in the file `cclass-common/partials/prob077.c`.
+Currently the structure of student data type, handling of user input and output has been done.
+
+- Edit functionality should be implemented in given function `student_edit()` which should
+  ask `id` of student to be edited, ask new details of students and then update it with old one.
+- Delete functionality should be implemented in given function `student_delete()` which should
+  ask `id` of student to be deleted, and then delete that student from students array.
+
+
+## Q-079. 05-12-2021
+Rewrite program `Q-077` using file as storage place and not students array in memory.
+You are given a partially solved problem of managing student records as a menu driven program
+in the file `cclass-common/partials/prob079.c`.
+Currently the structure of student data type, and few functions are declared.
+
+- Add function should be implemented in given function `student_add()`.
+- List funtionality should be implemented in given function `student_list()` which should
+  print all the students present in the file `fp` (passed as arg).
+
+The format of the output should be like:
+ID    ROLL    SCORE    NAME
+1     2       300      Student name
+...
+
+
+## Q-080. 05-12-2021
+Rewrite program `Q-077` using file as storage place and not students array in memory.
+You are given a partially solved problem of managing student records as a menu driven program
+in the file `cclass-common/partials/prob080.c`.
+Currently the structure of student data type, and few functions are declared.
+
+- Edit functionality should be implemented in given function `student_edit()` which should
+  ask `id` of student to be edited, ask new details of students and then update it with old one.
+- Delete functionality should be implemented in given function `student_delete()` which should
+  ask `id` of student to be deleted, and then delete that student from the file `fp`.
+
+
+## Q-081. 09-12-2021
+You are given the data structure of a UFC Martial Artist below.
+You need to ask details of 5 fighters and fill the struct and then print details of all fighters
+in tabular form as shown below.
+```c
+struct Fighter {
+	char name[100];
+	char country[100];
+	int rank;
+	double height;
+	int weight_class; /* just use 150, 170, 180, .. */
+};
+```
+```console
+SL.    RANK    HEIGHT    WGHT.        NAME                     COUNTRY
+1      5       5.7"      150          Dustin Poirier           US
+```
+
+
+## Q-082. 13-12-2021
+You need to improve the previous problem `Q-066` by sorting the array of fighter struct
+by fighter rank and then print the same, therefore the rank 1 fighter will be in top.
+
+
+## Q-083. 04-11-2021
+You need to improve the previous problem `Q-067`. As you are sorting the array of fighters
+by their rank but now you need to modify your program to take sort by column from command
+line argument and sort it according to that column.
+The cli argument can be any of the following:
+rank, wreight and height
+For example your program can be run as
+```console
+$ ./prog weight
+```
+So your program should sort the array using weight field in struct after taking input
+and print the sorted result in tabular form.
+
+Hint:
+You should first compare the `argv[1]` value to check what column is given and call
+appropriate function for sorting the array. Implementation of this logic may look
+like this:
+```c
+if (strcmp(argv[1], "weight") == 0) {
+	// Call sort by weight function or just implement the sorting
+	// logic right in this if block by using weight_class member
+	// for comparision.
+} else if (strcmp(argv[1], "height") == 0) {
+	// Call sort by height function or just implement the sorting
+	// logic right in this if block by using height member
+	// for comparision.
+} else if (strcmp(argv[1], "rank") == 0) {
+	// Call sort by rank function or just implement the sorting
+	// logic right in this if block by using rank member
+	// for comparision.
+} else {
+	// Handle invalid column name
+}
+```
+
+
+## Q-084. 17-12-2021
+Write a program to create linked list of 5 nodes. The node struct is given below.
+You need to store value in `data` member using user input.
+After building the linked list you need to find sum of all `data` in the linked list.
+```c
+struct node {
+	int data;
+	struct node *next;
+};
+```
+
+
+## Q-085. 18-12-2021
+Write a program to create linked list of `n` nodes. The node struct is given below.
+You need to store value in `data` member using user input.
+After building the linked list you need to print the linked list on `stdout` in
+the format given below.
+Note: Don't try to create a function for adding new node in the list.
+```c
+struct node {
+	int data;
+	struct node *next;
+};
+```
+
+Example input:
+8
+1 2 3 4 5 6 7 8
+
+Example output:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
+
+Explanation: First line of input, i.e. 8, is `n` then `n` integers are input.
+
+
+## Q-086. 21-12-2021
+Given a long sequence of digits `d` you need to print each digit as word.
+
+constraint:
+`0 < |d| (length of digits) <= 100`
+
+Example input:
+12345678910111213
+
+Example output:
+One Two Three Four Five Six Seven Eight Nine One Zero One One One Two One Three
+
+
+## Q-087. 20-12-2021
+Write a program to create linked list of `n` nodes. The node struct is given below.
+You need to store value in `data` member using user input.
+After building the linked list you need to print the number of even and odd numbers
+are present in the list.
+```c
+struct node {
+	int data;
+	struct node *next;
+};
+```
+
+Example input:
+8
+1 2 3 4 5 6 7 8
+
+Example output:
+Total Even = 4
+Total Odd  = 4
+
+Explanation:
+First line of input in 8 which is `n` and next line is space seperated `n` integers.
+Since the total number of even and odd integers present in the input is `4` and `4` respectively, the output
+shows the same.
+
+
+## Q-088. 24-12-2021
+Given a string `s` you need to replace every lowercase alphabets to it's corresponding uppercase alphabets.
+
+constraint:
+* 0 < |s| (length of string) <= 100
+
+1.
+Example Input:
+The quick brown fox jumps over the lazy dog.
+
+Example Output:
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+
+2.
+Example Input:
+123 Abc456 efg HiJklm.
+
+Example Output:
+123 ABC456 EFG HIJKLM.
+
+
+## Q-089. 24-12-2021
+Write a program to input 2D array of size `n` and create a 2D array of size `n x n`. Fill the array
+in such a way that the left diagonal of the 2D array should be filled with `1` and other cells
+with `0`.
+
+constraints:
+* 0 < n <= 100
+
+1.
+Example Input:
+5
+
+Example Output:
+1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 1 0
+0 0 0 0 1
+
+
+## Q-090. 24-12-2021
+Write a program to create linked list of `n` nodes. The node struct is given below.
+You need to store value in `data` member using user input.
+After building the linked list you need to print the `data` of first and last node
+of the linked list.
+```c
+struct node {
+	int data;
+	struct node *next;
+};
+```
+
+Example input:
+8
+1 2 3 4 5 6 7 8
+
+Example output:
+First node = 1
+Last node  = 8
+
+
+## Q-091. 29-12-2021
+You are given partially solved linked list problem for impelementing linked listed
+operations, insertion, deletion and traversal, in the file `cclass-common/partials/prob091.c`.
+You need to implement only these functions:
+```
+Node *llist_insert_before(Node *head, Node *node, int data);
+Node *llist_insert_after(Node *head, Node *node, int data);
+Node *llist_delete_end(Node *head);
+Node *llist_delete_node(Node *head, int data);
+void llist_print(Node *head);
+```
+You don't need to write test code, all the test code is already written and your
+implemented functions will automatically tested. Except the `llist_print()` function
+should be tested by you by verifying the below output:
+```
+2 4 6 8 10
+```
+
+
+## Q-092. 02-01-2022
+You need to create a menu driven program that will allow to perform all the following
+operations on singly linked list:
+
+* Insear new node at the front
+* Insert new node at the end
+* Insert new node before a given key
+* Insert new node after a given key
+* Delete node from front
+* Delete node from end
+* Delete node of given key
+* Print the list
+* Print the list in reverse order
+
+You can use the solution from previous problem `Q-091`.
+
+The menu should look like this:
+```console
+ 1: To insert node at the front
+ 2: To insert node at the end
+ 3: To insert node before a key
+ 4: To insert node after a key
+ 5: To delete frist node
+ 6: To delete last node
+ 7: To delete node of given key
+ 8: To print the linked list
+ 9: To print the linked list in reverse order
+
+ > 
+
+```
+
+
+## Q-093. 06-01-2022
+Write a program to create doubly linked list of 5 nodes inserting at the end.
+The node struct is given below. You need to store value in `data` member using user input.
+After building the list you need to print the data of all nodes.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+
+
+## Q-094. 06-01-2022
+Write a program to create doubly linked list of 5 nodes inserting at the front.
+The node struct is given below. You need to store value in `data` member using user input.
+After building the list you need to print the data of all nodes.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+
+
+## Q-095. 06-01-2022
+Write a program to create doubly linked list of 5 nodes inserting at the front.
+The node struct is given below. You need to store value in `data` member using user input.
+Then insert `999` (data) before a given node (input by user) in the list.
+After building the list you need to print the data of all nodes.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+
+Example Input:
+1 2 3 4 5
+5
+
+Example Output:
+999 5 4 3 2 1
+
+Explanation:
+First line of input is value of 5 nodes and in the second line value of data i.e. 5
+before which new node `999` must be inserted.
+Input for 5 nodes are given in the first line of example input. As mentioned in the problem
+that new node will be inserted at the front so the list will be
+5 4 3 2 1
+And inserting new node `999` before `5` will make the list as
+999 5 4 3 2 1
+
+
+## Q-096. 06-01-2022
+Write a program to create doubly linked list of 5 nodes inserting at the end.
+The node struct is given below. You need to store value in `data` member using user input.
+Then insert `999` (data) after a given node (input by user) in the list.
+After building the list you need to print the data of all nodes.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+
+Example Input:
+1 2 3 4 5
+5
+
+Example Output:
+1 2 3 4 5 999
+
+Explanation:
+First line of input is value of 5 nodes and in the second line value of data i.e. 5
+after which new node `999` must be inserted.
+Input for 5 nodes are given in the first line of example input. As mentioned in the
+problem that new node will be inserted at the end then the list will be
+1 2 3 4 5
+And inserting new node `999` after `5` will make the list as
+1 2 3 4 5 999
+
+
+## Q-097. 13-01-2022
+Write a program to delete node from the front in a doubly linked list.
+Use the solution of previous problems (insert at the end) to build
+doubly linked list first.
+Delete two nodes and then print the list to verify that your program
+gives correct output.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+Example input:
+1 2 3 4 5
+
+Example output:
+3 4 5
+
+
+## Q-098. 13-01-2022
+Write a program to delete node from the end in a doubly linked list.
+Use the solution of previous problems (insert at the end) to build
+doubly linked list first.
+Delete two nodes and then print the list to verify that your program
+gives correct output.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+Example input:
+1 2 3 4 5
+
+Example output:
+1 2 3
+
+
+## Q-099. 13-01-2022
+Wrie a program to print the doubly linked list in reverse order using
+loop and without using extra space.
+Use the solution of previous problems (insert at the end) to build
+doubly linked list first.
+```c
+struct node {
+	int data;
+	struct node *prev;
+	struct node *next;
+};
+```
+Example input:
+1 2 3 4 5
+
+Example output:
+5 4 3 2 1
+
+
+## Q-100. 15-01-2022
+Implement stack data structure using linked list data structure.
+You can use the previous linked list data structure solution.
+You need to implement these operations using functions:
+
+- push
+- pop
+- top
+- empty
+
+
+## Q-101. 15-01-2022
+Implement queue data structure using linked list data structure.
+You can use the previous linked list data structure solution.
+You need to implement these operations using functions:
+
+- enqueue
+- dequeue
+- front
+- rear
+- empty
+
+## Q-102. 16-01-2022
+Write the program to perform the below given `n` operations using stack data structure.
+You need to print the elements left in the stack after performing all the operations.
+The operations are:
+- `+` to push item onto stack
+- `-` to pop item from stack
+
+These operations may appear in any order and any number of time. The `+` (push) operation 
+requires a parameter so the actual `+` operation will look like `+ 5`, this means push
+`5` onto stack.
+
+Example Input:
+5
++ 1
++ 2
++ 3
++ 4
+-
+
+Example Output:
+3 2 1
+
+Explanation:
+The first line of input is `n` (i.e. 5), the number of operations then `n` line follows.
+Each line represents single operation. Now the first 4 operations are push so the stack
+will look like `4 3 2 1` (4 being top element and 1 being bottom element). Next the 5th
+line is pop operation there for stack will be `3 2 1` and this is the output.
+
+
+## Q-103. 17-01-2022
+Write a linked list program to search an element in the linked list.
+You are given the number of nodes `n` and data for `n` nodes. Next you are
+given data `x` to find first occurance of that data in the linked list, if found
+then print the position (indexed 0) of data `x` in the list otherwise print `-1`.
+
+1.
+Example Input:
+5
+1 2 3 4 5
+4
+
+Example Output:
+3
+
+2.
+Example Input:
+5
+1 2 3 4 5
+6
+
+Example Output:
+-1
+
+
+## Q-104. 17-01-2022
+Write a singly linked list program to swap given nodes.
+You are given the number of nodes `n` and data for `n` nodes. Next you are
+given data `x` to swap `x` with it's next node and print the list, you need to
+swap the node not the data. It is guaranteed that given data `x` will not be
+last node of the list.
+1.
+Example Input:
+5
+1 2 3 4 5
+4
+
+Example Output:
+1 2 3 5 4
+
+
+## Q-105. 01-02-2022
+Write a singly linked list program to find kth node from the beginning.
+You are given the number of nodes `n` and data for `n` nodes. Next you are
+given `k` to find the kth node in the linked list from the beginning.
+
+constraints:
+1 <= n <= 100
+1 <= k <= n
+
+1.
+Example Input:
+5
+5 4 3 2 1
+4
+
+Example Output:
+2
+
+
+## Q-106. 02-02-2022
+Write a singly linked list program to find kth node from the end.
+You are given the number of nodes `n` and data for `n` nodes. Next you are
+given `k` to find the kth node in the linked list from the end.
+
+constraints:
+1 <= n <= 100
+1 <= k <= n
+
+1.
+Example Input:
+5
+1 2 3 4 5
+2
+
+Example Output:
+4
+
+
+## Q-107. 03-02-2022
+Write a singly linked list program  (insert at the end) to find kth node from
+the end but this time, you need to implement function `void list_kth_node(Node *head, int k)`
+which will take `head` of the list and `k` to print kth node in the list from the end.
+You are given the number of nodes `n` and data for `n` nodes. Next you are
+given `k` to find the kth node in the linked list from the end.
+
+constraints:
+1 <= n <= 100
+1 <= k <= n
+
+1.
+Example Input:
+5
+1 2 3 4 5
+2
+
+Example Output:
+4
+
+
+## Q-108. 03-02-2022
+Write a singly linked list program (insert at the end) to find middle node of
+the list, you need to implement function `void list_middle_node(Node *head)`
+which will take `head` of the list print data of middle node in the list.
+You are given the number of nodes `n` and data for `n` nodes.
+
+constraints:
+1 <= n <= 100
+
+1.
+Example Input:
+5
+1 2 3 4 5
+
+Example Output:
+2
+
+Explanation:
+n is 5 and 5 / 2 is 2 (integer division)  therefore 2nd position element (which is 2 is printed).
+
+2.
+Example Input:
+4
+1 2 3 4
+
+Example Output:
+2
+
+Explanation:
+n is 4 and 4 / 2 is 2 therefore 2nd position element (which is 2 is printed).
+
+
+## Q-109. 04-02-2022
+Write a program to convert a decimal non negative integer `n` to it's binary equivalent.
+
+constraints:
+1 <= n <= 1000000007
+
+1.
+Example Input:
+45
+
+Example Output:
+101101
+
+
+## Q-110. 10-02-2022
+Write a program to implement hash table data structure and also implement a function
+`void ht_print_list_length(ht)` which will take only one argument Hash Table struct
+and prints lengths of every linked list in hash table (do not print those array elements
+which has zero linked list length).
+
+Let's say you have hash table array size 100 and index 0, 1 and 99 has linked list with
+length 12, 3, 8 respectively other indices of the array has 0 length linked list.
+So the output should be:
+
+0  -> 12
+1  ->  3
+99 ->  8
+
+Where first column respresents index of the array and second column represents length of
+the linked list at that indices.
+
+
+## Q-111. 12-02-2022
+Write a program to find all the words which are not present in the given dictionary.
+You are given a dictionary file path `d` and a text file path `f`, you need to print
+all the words from file `f` which are not present in the dictionary file `d`.
+The content of the dictionary file is: each word in a seperate line.
+The content of the text file is: can have multiple words in a single line and can have
+more than 1 line. In other words the content will be like this problem statement.
 
 
