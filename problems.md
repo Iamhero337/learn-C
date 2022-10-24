@@ -2117,4 +2117,285 @@ The content of the dictionary file is: each word in a seperate line.
 The content of the text file is: can have multiple words in a single line and can have
 more than 1 line. In other words the content will be like this problem statement.
 
+Example Input:
+`d` = `/usr/share/dict/words`
+`f` = `problems.md`
 
+
+## Q-112. 18-07-2022
+Given positive integer `n` and `n` integers in next line separated by space.
+You need to sort the input using `Selection Sort` algorithm.
+
+Example Input:
+5
+9 1 4 2 7
+
+Example Output:
+1 2 4 7 9
+
+
+## Q-113. 18-07-2022
+Given positive integer `n` and `n` integers in next line separated by space.
+You need to sort the input using `Insertion Sort` algorithm.
+
+
+## Q-114. 18-07-2022
+Given positive integer `n` and `n` integers in next line separated by space.
+You need to sort the input using `Merge Sort` algorithm.
+
+
+## Q-115. 18-07-2022
+Given positive integer `n` and `n` integers in next line separated by space.
+You need to sort the input using `Quick Sort` algorithm.
+
+
+## Q-116. 18-07-2022
+Given positive integer `n` and `n` integers in next line separated by space.
+You need to sort the input using `Heap Sort` algorithm.
+
+
+## Q-117. 18-07-2022
+Given positive integer `n` and `n` non-negative integers in next line separated by space.
+You need to sort the input using `Counting Sort` algorithm.
+
+
+## Q-118. 25-07-2022
+Write a program to merge two sorted integer linked list list1 and list2 in a new linked list.
+You need to implement a function `ListNode *merge_list(ListNode *list1, ListNode *list2)` which will take
+two linked list and creates a new linked list dynamically and merges the linked list in
+this new linked list in sorted order and return this new linked list.
+
+Example Input:
+5
+1 3 5 6 8
+4
+1 2 3 4
+
+List 1 and list 2 will look like
+list1 = 1 -> 3 -> 5 -> 6 -> 8
+list2 = 1 -> 2 -> 3 -> 4
+
+Example Output:
+1 1 2 3 3 4 5 6 8
+
+The output list will look like
+list3 = 1 -> 1 -> 2 -> 3 -> 3 -> 4 -> 5 -> 6 -> 8
+
+
+## Q-119. 25-07-2022
+Minimize subtraction of Array elements to make X at most 0
+Given a number X, and an array arr[] of length N containing the N numbers. The task is to find the minimum number of operations required to make X non-positive. 
+
+In one operation:
+Select any one number Y from the array and reduce X by Y. 
+Then make Y = Y/2 (take floor value if Y is odd).
+If it is not possible to make X non-positive, return -1.
+
+Example:
+
+Input: N = 3, arr[] = {3, 4, 12}, X = 25
+Output:  4
+Explanation: Operation 1: Y=12,   X reduces to 13,  Y becomes 6, arr[]: {3, 4, 6}
+Operation 2: Y = 6, X reduces to 7, Y becomes 3, arr[]: {3, 4, 3}
+Operation 3: Y = 4, X reduces to 3, Y becomes 2, arr[]: {3, 2, 3}
+Operation 4: Y = 3, X reduces to 0, Y becomes 1, arr[]: {1, 2, 3}
+Total operations will be 4.
+
+Input:  N = 3, arr[] = {11, 11, 110}, X = 11011
+Output: -1
+Explanation: It is impossible to make X non-positive
+
+
+## Q-120. 25-07-2022
+Find First and Last Position of Element in Sorted Array
+**Medium**
+
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+If target is not found in the array, return [-1, -1].
+You must write an algorithm with O(log n) runtime complexity.
+
+
+Example 1:
+
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+
+
+Example 2:
+
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+
+
+Example 3:
+
+Input: nums = [], target = 0
+Output: [-1,-1]
+
+
+Constraints:
+
+0 <= nums.length <= 105
+-109 <= nums[i] <= 109
+nums is a non-decreasing array.
+-109 <= target <= 109
+
+
+## Q-121. 04-08-2022
+
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+xample 1:
+
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+
+Example 2:
+
+Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+
+
+## Q-122. 08-08-2022
+
+Given an integer n (number of rows), return the first n rows of Pascal's triangle.
+You need to implement `int **pascal_triangle(int n, int *nrows, int **ncols)`.
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+```
+
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+
+```
+
+Input: numRows = 5
+Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+Example 2:
+
+Input: numRows = 1
+Output: [[1]]
+
+
+
+Constraints:
+
+1 <= numRows <= 30
+
+
+## Q-123. 19-08-2022
+
+Given two non-empty arrays of integers, write a function that determines whether
+the second array is a subsequence of the first one.
+
+A subsequence of an array is a set of numbers that aren't necessarily adjacent in the array but that are in the same order as they appear in the array. For instance, the numbers `[1, 3, 4]` from a subsequence of the array `[1, 2, 3, 4]`, and so do the numbers `[2, 4]`. Note that a single number in an array and the array itself are both valid subsequences of the array.
+
+
+Example Input:
+
+array = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence = [1, 6, -1, 10]
+
+Example Output:
+
+true
+
+
+## Q-124. 19-08-2022
+
+Write a function that takes in the head of a Singly Linked List and an integer `k`, shifts the
+list in place (i.e., doesn't create a brand new list) by `k` positions, and returns it's new head.
+
+Shifting a Linked List means moving its nodes forward or backward and wrapping them around the list where
+appropriate. For example, shifting a Linked List forward by on position would make its tail become the
+new head of the linked list.
+
+Whether nodes are moved forward or backward is determined by whether `k` is positive or negative.
+
+```c
+struct lnode {
+	int data;
+	struct lnode *next;
+};
+
+```
+
+You can assume that the input Linked List will always have at least one node; in other words, the head
+will never be NULL.
+
+
+Example Input:
+
+head = 0 -> 1 -> 2 -> 3 -> 4 -> 5
+k = 2
+
+Example Output:
+
+4 -> 5 -> 0 -> 1 -> 2 -> 3
+
+
+## Q-125. 26-08-2022
+
+Pint sum of all left leaf node of a Binary Search Tree.
+
+Example Input:
+
+   15
+  /  \
+ 7    20
+     /  \
+    19  25
+
+Example Output:
+
+26
+
+Explanation:
+
+7 + 19
+
+
+## Q-126. 26-08-2022
+
+Print all leaf node of the Binary Search Tree.
+
+
+## Q-127. 27-08-2022
+
+Print all internal nodes (all nodes except leaf) of the Binary Search Tree.
+
+
+## Q-128. 27-08-2022
+
+Given a binary tree rooted at `root` to a function `struct node *bt_mirror(struct node *root)`.
+Implement this function and return root of mirrored binary tree. Do not create new tree.
+
+Example Input:
+
+   15
+  /  \
+ 7    20
+     /
+    19
+
+Example Output:
+
+   15
+  /  \
+ 20   7
+   \
+   19
